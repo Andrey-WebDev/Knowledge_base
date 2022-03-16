@@ -1,0 +1,225 @@
+body {
+	font-family: 'Noto Sans', sans-serif;
+	overflow: hidden;
+	color: white !important;
+	-moz-user-select: none;
+	user-select: none;
+}
+
+video {
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	position: fixed;
+	top: 0; 
+	right: 0; 
+	bottom: 0; 
+	left: 0;
+	overflow: hidden;
+}
+
+.left {
+	position: relative !important;
+    left: 30px !important;
+}
+
+.right {
+	position: relative;
+    left: 70px;
+}
+
+.header {
+	border-radius: 0 !important;
+	border: none !important;
+	padding: 0 !important;
+}
+
+.text-align-center {
+	text-align: center !important;
+}
+
+.margin-top-0 {
+    margin-top: 0px !important;
+}
+
+.margin-top-30 {
+	margin-top: 30px !important;
+}
+
+.margin-top-4 {
+	margin-top: 4px !important;
+}
+
+.margin-top-10 {
+	margin-top: 10px !important;
+}
+
+.margin-bottom-10 {
+	margin-bottom: 10px !important;
+}
+
+.background {
+	background: rgba(0,0,0, 0.7) !important;
+}
+
+.padding-5 {
+	padding: 5px !important;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.green {
+	color: green !important;
+	background-color: lightgreen !important;
+	font-size: 1.5em !important;
+}
+
+.bg-green {
+	background-color: green !important;
+	font-size: 1.5em !important;
+}
+
+.ft-size-15em {
+	font-size: 1.5em !important;
+}
+
+.ft-size-2em {
+	font-size: 2em !important;
+}
+
+.ft-size-3em {
+	font-size: 3em !important;
+}
+
+@media screen and (min-width: 992px) {
+
+
+
+
+
+
+.best {
+	font-size: 3.5em !important;
+	font-weight: bold !important;
+}
+
+.margin-row-user {
+	margin-left: 7vw !important;
+	margin-top: 3vh !important;
+}
+
+.full-img {
+	width: 365px !important;
+	/*height: 475px !important;*/
+}
+
+.place {
+
+}
+
+.middle {
+	position: relative;
+    top: 1vh;
+}
+
+.title {
+	display: inline-block !important;
+    position: relative !important;
+    left: 38vw !important;
+}
+
+.teplitsa {
+	font-size: 1.5em !important;
+	font-weight: bolder !important;
+}
+
+.fio {
+	font-size: 1.5em !important;
+}
+
+.whois {
+
+}
+
+.brig {
+
+}
+
+.percent {
+	font-size: 2em !important;
+}
+
+.footer {
+	font-size: 3em !important;
+	font-weight: bold !important;
+	position: fixed !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    margin: 0 !important;
+    width: 100vw !important;
+}
+
+}
+
+@media screen and (min-height: 980px) {
+
+.margin-row-user {
+	margin-top: 8vh !important;
+}
+	}
+
+/*@media screen and (max-width: 1299px) {
+
+.best {
+	font-size: 3.5em;
+	font-weight: bold;
+}
+
+.margin-row-user {
+	margin-left: 7vw !important;
+}
+
+.full-img {
+	width: 87%;
+}
+
+.place {
+
+}
+
+.teplitsa {
+	font-size: 1.5em;
+	font-weight: bolder;
+}
+
+.fio {
+
+}
+
+.whois {
+
+}
+
+.brig {
+
+}
+
+.percent {
+
+}
+
+.footer {
+	font-size: 2.5em;
+	font-weight: bold;
+	font-style: italic;
+	position: fixed;
+    left: 0;
+    bottom: 0;
+    margin: 0 !important;
+    width: 100vw;
+}
+
+}*/

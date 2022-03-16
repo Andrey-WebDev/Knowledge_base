@@ -1,0 +1,3 @@
+<?
+$sSectionName="mini_op";
+?>

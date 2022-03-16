@@ -1,0 +1,423 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&subset=cyrillic,cyrillic-ext');
+
+html {
+	background: lightgray;
+}
+
+header {
+	min-height: 10vh;
+	background: lightgray;
+}
+
+body {
+	background: lightgray !important;
+}
+
+header > article.row {
+	margin: 10px 5px 5px 5px!important;
+	width: 80% !important;
+}
+
+header > article > div {
+	margin: 2px 3px;
+	min-width: 150px !important;
+	min-height: 215px;
+}
+
+header > article > div:hover {
+	background: #ccc;
+	transition: .3s ease;
+	transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+  	-ms-transform: scale(1.1);
+  	z-index: 1;
+	-webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+}
+
+header > article > div > a {
+	display: block;
+	margin-top: auto;
+	margin-bottom: auto;
+	min-width: 150px;
+}
+
+header > article > div > a:hover {
+	text-decoration: none;
+}
+
+header > article > div > a > img {
+	max-width: 150px !important;
+	max-height: 210px !important;
+	padding: 5px;
+	margin-bottom: 25%;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+header > article > div > a > div {
+	position: absolute;
+	bottom: 0;
+	display: block;
+    width: 100%;
+}
+
+header > article > div > a > div > p {
+	text-align: center;
+	font-family: 'Ubuntu', sans-serif;
+	color: black;
+}
+
+/*БОКОВОЙ САЙДБАР*/
+
+aside {
+	border: 1px solid gray !important;
+	border-radius: .25rem;
+    max-width: 24% !important;
+    min-width: 24% !important;
+    height: 75%;
+    position: absolute;
+    right: 5px;
+    top: 12px;
+    overflow: auto;
+    z-index: 1;
+    background: white;
+	-webkit-box-shadow: -2px 2px 8px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: -2px 2px 8px 0px rgba(0,0,0,0.75);
+	box-shadow: -2px 2px 8px 0px rgba(0,0,0,0.75);
+}
+
+aside > span {
+	display: block;
+	text-align: center;
+	font-family: 'Ubuntu', sans-serif;
+	background: #c1c1c1 !important;
+	font-size: 1.2em;
+	margin-bottom: 5px;
+}
+
+aside > div {
+	display: inline-block;
+}
+
+aside > div > div {
+	display: inline-block;
+	width: 20%;
+	float: left;
+	padding: 5px;
+}
+
+aside > div > p {
+	display: inline-block;
+	width: 75%;
+	padding: 5px;
+	margin-right: 5px;
+	background: #dbffd4;
+	-webkit-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75);
+}
+
+aside > div > p > span {
+	font-weight: bold;
+	color: gray;
+	display: inline-block;
+}
+
+aside > div > p > i {
+	font-style: normal;
+	margin-left: 5px;
+}
+
+aside > button {
+	margin: 5px;
+    /*position: absolute;
+    top: 15%;*/
+}
+
+/*БОКОВОЙ САЙДБАР*/
+
+/*ИНДИКАТОР ЗАПОЛНЕННОСТИ*/
+
+.indicator {
+	/*display: block;*/
+	padding-top: 3px;
+	opacity: 0.3;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+header > article > div:hover > div.indicator {
+	opacity: 1;
+	transition: .3s ease;
+}
+
+.indicator_doth {
+	padding: 0 10px 0 10px;
+    border-radius: 25px;
+    margin: 10px;
+}
+
+.green {
+	background: radial-gradient(circle at 65% 15%, #56ff00, darkblue);
+}
+
+.red {
+	background: radial-gradient(circle at 65% 15%, red, darkblue);
+}
+
+/*ИНДИКАТОР ЗАПОЛНЕННОСТИ*/
+
+/*ЭКРАН С ГРАФИКОМ*/
+
+main {
+}
+
+main > div.row{
+	width: 98vw;
+	margin-left: 10px;
+	margin-top: 20px;
+}
+
+main > div.row > div{
+	text-align: justify;
+	word-wrap: break-word;
+	background: #EFEFE0;
+	border: 1px solid gray;
+	display: inline-block;
+	width: 33%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 13vh
+}
+
+main > div.row > div > button{
+	margin-left: 20px;
+}
+
+main > div.row > div > div{
+	font-size: 1.3em;
+	text-align: center;
+}
+
+main > div.row > div > div:last-child {
+	font-size: 0.9em;
+	text-align: right;
+	padding: 20px;
+	font-weight: bold;
+	color: gray;
+}
+
+main > div.row > div > div:last-child > span {
+	font-style: normal;
+}
+
+main > div.row > div > p{
+	font-size: 1em !important;
+	padding: 25px;
+}
+
+/*ЭКРАН С ГРАФИКОМ*/
+
+/*Подвал*/
+
+footer {
+	min-height: 10vh;
+    border-top: 1px solid gray;
+    position: fixed;
+    bottom: 0px;
+    background: #fff;
+    width: 100%;
+    -webkit-box-shadow: 0px -2px 8px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px -2px 8px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px -2px 8px 0px rgba(0,0,0,0.75);
+	z-index: 10;
+}
+
+footer > nav {
+	padding: 10px;
+}
+
+footer > div {
+	text-align: center;
+	padding-bottom: 10px;
+	display: block;
+}
+
+footer > nav > ul {
+}
+
+footer > nav > ul > li {
+	list-style-type: none;
+	display: inline;
+}
+
+footer > nav > ul > li > a {
+	background: #dddddd;
+	padding: 8px 10px 9px 10px;
+	color: black;
+	border-radius: 3px;
+}
+
+/*ЦВЕТ КНОПОК ДЛЯ MOZ*/
+@-moz-document url-prefix() {
+  	footer > nav > ul > li > a {
+		background: #f0f0f0;
+		padding: 8px 10px 9px 10px;
+		color: black;
+		border-radius: 3px;
+	}
+}
+/*ЦВЕТ КНОПОК ДЛЯ MOZ*/
+
+footer > nav > ul > li > a:hover {
+	text-decoration: none;
+}
+
+.btn-group {
+	vertical-align: inherit !important;
+}
+/*ВЫПАДАЮЩЕЕ МЕНЮ*/
+
+footer > nav > ul > div > ul {
+	background: gray;
+}
+
+footer > nav > ul > div > ul > li {
+	text-align: center;
+}
+
+footer > nav > ul > div > ul > li > a {
+	background: gray;
+	display: block;
+	color: white;
+}
+
+footer > nav > ul > div > ul > li > a:hover {
+	text-decoration: none;
+}
+
+.dropdown-menu.show {
+	background: gray !important;
+}
+
+/*ВЫПАДАЮЩЕЕ МЕНЮ*/
+
+
+/*Подвал*/
+
+
+
+/*ПЕРЕКЛЮЧАТЕЛЬ*/
+.container {
+    height: 67px;
+    left: 89.3%;
+    margin: -19px 0 0 0;
+    position: absolute;
+    top: 35%;
+    width: 160px;
+}
+
+.switch {
+	background: lightgray;
+	border-radius: 32px;
+	display: block;
+	height: 36px;
+	position: relative;
+	width: 80px;
+}
+
+.switch label {
+	color: #fff;
+	font-size: 24px;
+	font-weight: 300;
+	line-height: 64px;
+	text-transform: uppercase;
+	-webkit-transition: color .2s ease;
+	-moz-transition: color .2s ease;
+	-ms-transition: color .2s ease;
+	-o-transition: color .2s ease;
+	transition: color .2s ease;
+	width: 100px;
+}
+
+.name {
+    border: solid 1px;
+    border-radius: 7px;
+    position: relative;
+    right: 85px;
+    bottom: 4px;
+    color: gray;
+    min-width: 224px;
+    height: 65px;
+    font-weight: 300;
+    line-height: 100px;
+    text-transform: uppercase;
+	-webkit-transition: color .2s ease;
+	-moz-transition: color .2s ease;
+	-ms-transition: color .2s ease;
+	-o-transition: color .2s ease;
+	transition: color .2s ease;
+	text-align: center;
+}
+
+.switch label:nth-of-type(1) {
+	left: -130%;
+	position: absolute;
+	text-align: right;
+    bottom: -15px;
+}
+
+.switch label:nth-of-type(2) {
+	position: absolute;
+	right: -130%;
+	text-align: left;
+    bottom: -15px;
+}
+
+.switch input {
+	height: 32px;
+	left: 0;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	width: 80px;
+	z-index: 2;
+}
+
+.switch input:checked~label:nth-of-type(1) { color: gray; }
+.switch input:checked~label:nth-of-type(2) { color: lightgray; }
+
+.switch input~:checked~label:nth-of-type(1) { color: gray; }
+.switch input~:checked~label:nth-of-type(2) { color: lightgray; }
+
+.switch input:checked~.toggle {
+	left: 4px;
+}
+
+.switch input~:checked~.toggle {
+	left: 50px;
+}
+
+.switch input:checked {
+	z-index: 0;
+}
+
+.toggle {
+	background: #4a4a4a;
+	border-radius: 50%;
+	height: 28px;
+	left: 0;
+	position: absolute;
+	top: 4px;
+	-webkit-transition: left .2s ease;
+	-moz-transition: left .2s ease;
+	-ms-transition: left .2s ease;
+	-o-transition: left .2s ease;
+	transition: left .2s ease;
+	width: 28px;
+	z-index: 1;
+}
+/*ПЕРЕКЛЮЧАТЕЛЬ*/

@@ -1,0 +1,1 @@
+It contains pop-up modal windows, a page with surveys in the form of a pdf file, adding pdf files to the server for different car brands. The functionality is developed in php, javascript and bitrix

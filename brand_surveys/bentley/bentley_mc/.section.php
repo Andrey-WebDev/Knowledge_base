@@ -1,0 +1,3 @@
+<?
+$sSectionName="bentley_mc";
+?>

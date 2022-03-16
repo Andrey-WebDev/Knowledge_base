@@ -1,0 +1,3 @@
+<?
+$sSectionName="fiat_mc";
+?>
