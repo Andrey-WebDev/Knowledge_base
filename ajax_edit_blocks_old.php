@@ -6,20 +6,14 @@ if($_POST["SAVE"] && $_POST["SAVE"] == "Y"){
 	$propCode = $_POST["BLOCK_CODE"];
 	$iblockID = 95;
 	$text = $_POST["HTML"];
-	$ArrProp[$propCode] = array('VALUE' => array('TYPE' => 'HTML', 'TEXT' => $text));
-	
-	$el = new CIBlockElement;
-	
+	$ArrProp[$propCode] = array('VALUE' => array('TYPE' => 'HTML', 'TEXT' => $text));	
+	$el = new CIBlockElement;	
 	$arLoadProductArray = Array(
 		"MODIFIED_BY"    => $USER->GetID(), // элемент изменен текущим пользователем
 	);
 
-	$res = $el->Update($elID, $arLoadProductArray);
-	
-	CIBlockElement::SetPropertyValuesEx($elID, $iblockID, $ArrProp);
-	
-	
-	
+	$res = $el->Update($elID, $arLoadProductArray);	
+	CIBlockElement::SetPropertyValuesEx($elID, $iblockID, $ArrProp);	
 	echo $text;
 }
 else{

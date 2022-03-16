@@ -1,11 +1,7 @@
 ﻿ <?
  include($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
-
-/*ini_set('error_reporting', E_ALL);
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);*/
-
  ?>
+
  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
  <html xmlns="http://www.w3.org/1999/xhtml">
@@ -17,11 +13,9 @@ ini_set('display_startup_errors', 1);*/
  	<?CJSCore::Init();?>
  	<script src="/knowledge_base/scripts/jquery-1.8.3.js"></script>
  	<link rel="stylesheet" href="jquery.fancybox.min.css">
-
- 	<script type="text/javascript" src="/knowledge_base/jquery.fancybox.min.js"></script>
-
-	
+ 	<script type="text/javascript" src="/knowledge_base/jquery.fancybox.min.js"></script>	
  </head>
+
  <body>
  	<?
  	/* $APPLICATION->ShowHead(); */
@@ -52,19 +46,14 @@ ini_set('display_startup_errors', 1);*/
  			'PROPERTY_SALES_DEPORT',
  			"TIMESTAMP_X",
  		)
- 		//array ('NAME','ID','CODE','PREVIEW_PICTURE', "PROPERTY_SALES_DEPORT", "PROPERTY_KUZ_TSEH", "PROPERTY_MEH_TSEH")
  	);
 
  	while ($ob = $res->GetNextElement()){
 	 	$arFields = $ob->GetFields();
-		/*echo "<pre>";
-		print_r($arFields);
-		echo "</pre>";*/
 		$arresult[$arFields['ID']]['NAME'] = $arFields['NAME'];
 		$arresult[$arFields['ID']]['CODE'] = $arFields['CODE'];
 		$arresult[$arFields['ID']]['PICTURE'] = CFile::GetFileArray($arFields['PREVIEW_PICTURE']);
 	 	$arProps = $ob->GetProperties();
-	 	// var_dump($arFields['ID']);
 		$arresult[$arFields['ID']]["PROPS"]["MEH_TSEH"] = $arProps["MEH_TSEH"]["DESCRIPTION"];
 		$arresult[$arFields['ID']]["PROPS"]["KUZ_TSEH"] = $arProps["KUZ_TSEH"]["DESCRIPTION"];
 		$arresult[$arFields['ID']]["PROPS"]["SALES_DEPORT"] = $arProps["SALES_DEPORT"]["DESCRIPTION"];
@@ -92,13 +81,6 @@ ini_set('display_startup_errors', 1);*/
 
  		while ($arres = $res->GetNextElement()){
  			$arPropsDOP = $arres->GetProperties();
-
- 			/*echo "<pre>";
- 			print_r($arPropsDOP['KUZ_TSEH']);
- 			echo "</pre>";*/
-
- 			// var_dump($arCODE[0]);
-
  			if ($arCODE[0] == 'SALE'){
  				$arresult[$key]["PROPS"]["SALES_DEPORT"] = $arPropsDOP['SALES_DEPORT']["DESCRIPTION"];
  			}
@@ -122,25 +104,7 @@ ini_set('display_startup_errors', 1);*/
 			);
  		}
  	}
-
-
- 	?>
-
-<? /* $APPLICATION->IncludeComponent("bitrix:fileman.light_editor","",Array(
-    "CONTENT" => "",
-    "INPUT_NAME" => "",
-    "INPUT_ID" => "",
-    "WIDTH" => "100%",
-    "HEIGHT" => "300px",
-    "RESIZABLE" => "Y",
-    "AUTO_RESIZE" => "Y",
-    "VIDEO_ALLOW_VIDEO" => "N",
-    "USE_FILE_DIALOGS" => "N",
-    "ID" => "",
-    "JS_OBJ_NAME" => ""
-    )
-    ); */
-    ?>
+ ?>
     <header>
     	<div class="header" align="left">
 			<div id="snow"></div>
@@ -156,32 +120,27 @@ ini_set('display_startup_errors', 1);*/
 									1
 								</div>
 							</div>
-																	<div class="warning">
-																	Уважаемые коллеги! В связи с обновлением списка ДЦ<br> 
-																	в Базе Знаний, возможны небольшие сбои в работе.<br>
-																	Ориенторовочная дата окончания работ: 4 декабря.<br>
-																	Приносим извенения за доставленные неудобства.
-																	</div>
+							<div class="warning">
+							Уважаемые коллеги! В связи с обновлением списка ДЦ<br> 
+							в Базе Знаний, возможны небольшие сбои в работе.<br>
+							Ориенторовочная дата окончания работ: 4 декабря.<br>
+						    Приносим извенения за доставленные неудобства.</div>
     		</div>
     	</div>
-
-
     </header>
 
     <div class="menu" align="center">
-
     	<div class="menu_wrapper">
-    			<div class="menu_item">
-    					<a data-fancybox="modal" data-src="http://ipsoftrec.avilon-nymm.ru/tv/index.php"href="#">
+    		<div class="menu_item">
+    			<a data-fancybox="modal" data-src="http://ipsoftrec.avilon-nymm.ru/tv/index.php"href="#">
     				<div class="thumbs goHome">
     						<img src="img/im.png">
     						<div class="caption">
     							<span class="title">Статистика</span>
     						</div>
     				</div>
-    					</a>
-
-    			</div>
+    			</a>
+    		</div>
     			<?
     			$delimer=intval(count($arresult)/3);
     			$i=1;
@@ -206,21 +165,8 @@ ini_set('display_startup_errors', 1);*/
     			$i++;
     		}
     		?>
-
     	</div>
-
-
-
 </div>
-
-<!-- Разметка на главной -->
-
-<!--<div class="break">
-    <a data-fancybox="modal" data-src="#break" href="#">
-        <img src='/knowledge_base/img/break.png' class="break_img">
-	</a>
-</div> -->
-
 
 <div class="layout">
 	<?$APPLICATION->IncludeComponent("bitrix:news.list","knowledge_base",Array(
@@ -284,7 +230,6 @@ ini_set('display_startup_errors', 1);*/
 		<div class="showAddNews">Добавить новость</div>
 	<?}?>
 
-
 	<div class="add_news" align="center" id="popup">
 			<h1> Добавить новость </h1>
 		<form>
@@ -314,7 +259,6 @@ ini_set('display_startup_errors', 1);*/
 	</div>
 
 </div>
-
 
 <!-- END Разметка на главной -->
 
@@ -384,6 +328,5 @@ setInterval(function() {
 <!-- SWITCH -->
 </div>
 </div>
-
 </body>
 </html>

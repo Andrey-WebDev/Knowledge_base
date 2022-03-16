@@ -693,20 +693,11 @@ background-image: url(http://intranet/knowledge_base/img/bg-light.png);
   .one h1 {font-size: 2em;}
 }
 
-
-
-
-
-
-
 /* Стили для модального окна с добавлением pdf документа */
-
-.overlay {
-   
+.overlay { 
    /* Скрываем подложку  */
    opacity: 0;
    visibility: hidden;
-   
    position: fixed;
    top: 0;
    left: 0;
@@ -717,9 +708,7 @@ background-image: url(http://intranet/knowledge_base/img/bg-light.png);
    transition: .3s all;
 }
 
-
 /* Стили для модальных окон */
-
 .modal {
    /* Скрываем окна  */
    opacity: 0;

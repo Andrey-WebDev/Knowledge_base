@@ -4,4 +4,5 @@
 	}
 		else{
 		include($_SERVER["DOCUMENT_ROOT"]."/knowledge_base/OLD.php");
-	}?>
+    }
+?>

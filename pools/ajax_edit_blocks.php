@@ -6,10 +6,8 @@ if($_POST["SAVE"] && $_POST["SAVE"] == "Y"){
 	$propCode = $_POST["BLOCK_CODE"];
 	$iblockID = 95;
 	$text = $_POST["HTML"];
-	$ArrProp[$propCode] = array('VALUE' => array('TYPE' => 'HTML', 'TEXT' => $text));
-	
+	$ArrProp[$propCode] = array('VALUE' => array('TYPE' => 'HTML', 'TEXT' => $text));	
 	CIBlockElement::SetPropertyValuesEx($elID, $iblockID, $ArrProp);
-	
 	echo $text;
 }
 else{

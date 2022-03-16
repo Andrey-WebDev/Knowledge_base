@@ -15,8 +15,7 @@
 	$sMenu = file_get_contents($_SERVER["DOCUMENT_ROOT"]."/knowledge_base/pools/.menu.php");
 	$arMenu = unserialize($sMenu);
 	?>
-
-       <!-- БОКОВОЕ МЕНЮ -->
+    <!-- БОКОВОЕ МЕНЮ -->
     <div class="menu_2">
 
       <!-- Иконка меню -->
@@ -28,9 +27,6 @@
 		<img src="/knowledge_base/pools/images/ADD.png" class="add">
 	<?}?>
       <!-- Меню -->
-		<?/*
-		data-fancybox data-type="ajax" data-src="='/knowledge_base/pages_instructions/page'.$key.'.php'"
-		*/?>
       <ul class="left_menu_tems">
       	<?foreach($arMenu as $key => $menyItem){?>
         	<li class="menu_item" data-src=<?=$key?>>
@@ -42,29 +38,13 @@
 
         	</li>
 		<?}?>
-		<?/**/?>
-
-
-        <!-- <li><a href="#">Результат звонка «Претензия (Кража)»</a></li>
-        <li><a href="#">Результат звонка «Недоступен»</a></li>
-        <li><a href="#">Результат звонка «Неэффективный»</a></li>
-        		<li><a href="#">Результат звонка «Отказался разговаривать»</a></li>
-        		<li><a href="#">Исключение из опросов</a></li>
-        		<li><a href="#">Шаблоны для заполнения комментариев</a></li>
-        		<li><a href="#">Отчеты</a></li>
-        		<li><a href="#">Contact</a></li>
-        		<li><a href="#">Contact</a></li> -->
       </ul>
-      <!--<div class="edit">edit</div>-->
-      <!--<div class="add">add</div>-->
     </div>
-
 	  <!-- БОКОВОЕ МЕНЮ -->
 
 <div class="wrapper">
 
  <?
-/* $APPLICATION->ShowHead(); */
 CModule::IncludeModule('iblock');
 
 $res=CIBlockElement::GetList(
@@ -92,50 +72,28 @@ while ($arres=$res->fetch()){
 }
  ?>
 
-<? /* $APPLICATION->IncludeComponent("bitrix:fileman.light_editor","",Array(
-    "CONTENT" => "",
-    "INPUT_NAME" => "",
-    "INPUT_ID" => "",
-    "WIDTH" => "100%",
-    "HEIGHT" => "300px",
-    "RESIZABLE" => "Y",
-    "AUTO_RESIZE" => "Y",
-    "VIDEO_ALLOW_VIDEO" => "N",
-    "USE_FILE_DIALOGS" => "N",
-    "ID" => "",
-    "JS_OBJ_NAME" => ""
-    )
-); */
- ?>
-
 <header>
-
 	<div class="header" align="left">
-								<div id="garland" class="garland_4">
-								<div id="nums_1">
-									1
-								</div>
-							</div>
-	      <div class="icon-menu">
-        <img src="images/menu-ham-icon.png">
-        <font color="black">Инструкции</font>
-      </div>
+		<div id="garland" class="garland_4">
+			<div id="nums_1">1</div>
+		</div>
+	    <div class="icon-menu">
+            <img src="images/menu-ham-icon.png">
+                <font color="black">Инструкции</font>
+        </div>
 		<img src="img/logo.png">
 			<div class="chat">
 				<h1 class="white">Опросы</h1>
 				<br>
-				<div align="center"> <img src="img/phone.png" width="85px" height="85px"> </div>
-
+				<div align="center"><img src="img/phone.png" width="85px" height="85px"></div>
 				<div id="snow"></div>
 			</div>
 	</div>
 </header>
-
 <div class="menu" align="center">
-
 <table class="table">
 	<tr>
-			<td>
+		<td>
 			<a href="javascript:history.back()" onMouseOver="window.status='Назад';return true">
 				<div class="thumbs goHome">
 					<img src="/knowledge_base/img/home.png" width="15px" height="15px">
@@ -144,42 +102,30 @@ while ($arres=$res->fetch()){
 					</div>
 				</div>
 			</a>
-
 		</td>
 <?
 $delimer=intval(count($arresult)/2);
 $i=1;
 foreach ($arresult as $key=> $aritim) {?>
-<td>
-				<div class="thumbs" data-CODE='<?=$aritim['CODE']?>' data-ID='<?=$key?>'>
+    <td>
+		<div class="thumbs" data-CODE='<?=$aritim['CODE']?>' data-ID='<?=$key?>'>
 			<img src="<?=$aritim['PICTURE']['SRC'] ?>" style="<?=$aritim['PICTURE']['DESCRIPTION']?>"><!--"width: 61px; height: 100px;"-->
 					<div class="caption">
 						<span class="title"><?=$aritim['NAME']?></span>
 					</div>
 		</div>
-		</td>
+	</td>
 		<? if ($i == $delimer) {
 			echo '</tr><tr>';
 		}
 		$i++;
 }
 ?>
-
-		</tr>
-
-		</table>
-
-
+	</tr>
+</table>
 </div>
 
-
-
   <!-- Разметка на главной -->
- <!--  <div class="break">
-    <a data-fancybox="modal" data-src="#break" href="#">
-        <img src='/knowledge_base/img/break.png' class="break_img">
-	</a>
-</div>-->
 
   <div class="layout">
   <?$APPLICATION->IncludeComponent("bitrix:news.list","knowledge_base",Array(
@@ -272,15 +218,11 @@ foreach ($arresult as $key=> $aritim) {?>
 
 </div>
   <!-- END Разметка на главной -->
-
-
-
   <div class="footer" align="left">
   <script src="/knowledge_base/scripts/jquery-1.8.3.js"></script>
   <script type="text/javascript" src="/knowledge_base/jquery.fancybox.min.js"></script>
   <script type="text/javascript" src="/knowledge_base/pools/menu.js"></script>
   <script type="text/javascript" src="/knowledge_base/scripts/left_menu.js"></script>
-  <!-- Меню -->
 <!-- Меню -->
 <?include($_SERVER["DOCUMENT_ROOT"]."/knowledge_base/menu.php");?>
 <br> <br> <br> <br>
@@ -297,8 +239,6 @@ foreach ($arresult as $key=> $aritim) {?>
 				function saveClick(){
 	$(".saveResult").on("click", function(){
 		$editedBlock = $(this).parent(".block_content");
-		//var blockText = $editedBlock.html();
-
 		var frameContent = $(this).parent(".block_content").find("iframe").contents().find("body").html();
 		var blockCode = $(this).parent(".block_content").data("block");
 		var blockID = $(this).parent(".block_content").data("id");
@@ -315,17 +255,11 @@ foreach ($arresult as $key=> $aritim) {?>
 			success: function(html){
 				$editedBlock.html(html);
 				$editedBlock.parent(".col").find(".edit_col").show();
-				//result=$.parseJSON(html);
-
-				/* $('.layout').html (html);
-				console.log(html); */
 			}
 		})
 
 		console.log(frameContent);
 		console.log(blockCode);
-
-		//CODE: blockCode,
 	})
 }
 
@@ -387,8 +321,6 @@ $(document).ready(function(){
 				$submenu.css("top", "-"+ submenuitems * 45+"px");
 			}
 		})
-
-				//console.log(Name);
 	$(".showAddNews").on("click", function(){
 		$(".add_news").fadeToggle();
 	})
@@ -397,7 +329,6 @@ $(document).ready(function(){
 		var frameContent = $(this).parent(".add_news").find("iframe").contents().find("body").html();
 		var Name = $(this).parent(".add_news").find("input[name='news_name']").val();
 		var iBlock = $(this).parent(".add_news").find("input[name='IBLOCK']").val();
-
 
 		$.ajax({
 			url: '/knowledge_base/addNews.php',
@@ -443,16 +374,12 @@ setInterval(function() {
   garland()
 }, 600)
 
-
 /* ОФОРМЛЕНИЕ */
 
 </script>
-
-	</font>
+</font>
 </div>
-
-  </div>
-
+</div>
   </div>
  </body>
 </html>

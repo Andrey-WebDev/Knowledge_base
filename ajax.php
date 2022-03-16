@@ -35,7 +35,6 @@ while ($arres = $res->GetNextElement()){
 	$arresult['NAME'] = $arFields['NAME'];
 	$arresult['TIMESTAMP_X'] = $arFields['TIMESTAMP_X'];
 
-
 	$arProps = $arres->GetProperties();
 	$arresult['MEH_TSEH'] = array("TEXT" => $arProps['MEH_TSEH']['~VALUE']['TEXT'], "ID" => $arFields['ID'], "DESCR" => $arProps['MEH_TSEH']["DESCRIPTION"]);
 	$arresult['KUZ_TSEH'] = array("TEXT" => $arProps['KUZ_TSEH']['~VALUE']['TEXT'], "ID" => $arFields['ID'], "DESCR" => $arProps['KUZ_TSEH']["~DESCRIPTION"]);
@@ -65,11 +64,6 @@ $res=CIBlockElement::GetList(
 while ($arres = $res->GetNextElement()){
 	$arFields = $arres->GetFields();
 	$arProps = $arres->GetProperties();
-
-	/*echo "<pre>";
-	print_r($arProps);
-	echo "</pre>";*/
-
 	if ($arCODE [0] == 'SALE'){
 		$arresult['SALES_DEPORT'] = array("TEXT" => $arProps['SALES_DEPORT']['~VALUE']['TEXT'], "ID" => $arFields["ID"], "DESCR" => $arProps['SALES_DEPORT']["DESCRIPTION"]);
 	}
@@ -88,17 +82,9 @@ foreach ($arresult as $key=>$arValues){
 }
 
 $cell_width = floor(95/$cellHaveText);
-
-
 foreach ($arresult as $key => $arValues){
-
 	if (is_array($arValues) && strlen($arValues["TEXT"])){
-
-		// $arEditor = CUser::GetByID($arresult["EDITOR"])->fetch();
-		// $editorName = $arEditor["NAME"]." ".$arEditor["SECOND_NAME"]." ".$arEditor["LAST_NAME"];
-
 		$sEditorData = "";
-
 		if (strlen($arValues["DESCR"])) {
 			$arEditData = explode(";", $arValues["DESCR"]);
 			$arEditor = CUser::GetByID($arEditData[1])->fetch();
@@ -114,13 +100,6 @@ foreach ($arresult as $key => $arValues){
 		$html = str_replace("#EDITOR#", $editor, $html);
 	}
 }
-
-//$html = str_replace("#DATE_UPDATE#", " в ".$arresult["TIMESTAMP_X"], $html);
-
-//exit;
-
 echo $html;
-//echo json_encode($arresult);
 exit;
-
- ?>
+?>

@@ -1,12 +1,10 @@
 /* Body */
-
 body {
   left: 0;
   margin: 0;
   overflow: hidden;
   position: relative;
 }
-
 
 /* Menu */
 
@@ -18,9 +16,7 @@ body {
   width: 285px;
 }
 
-
 /* Basic CSS */
-
 .background {
   background-image: url('images/chicago-night.jpg'); 
   height: 100%;

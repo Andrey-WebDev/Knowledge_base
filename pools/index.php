@@ -17,22 +17,16 @@
 	$sMenu = file_get_contents($_SERVER["DOCUMENT_ROOT"]."/knowledge_base/pools/.menu.php");
 	$arMenu = unserialize($sMenu);
 	?>
-
        <!-- БОКОВОЕ МЕНЮ -->
-    <div class="menu_2">
-
+<div class="menu_2">
       <!-- Иконка меню -->
 	<div class="icon-close">
 		<img src="images/close-btn.png">
 	</div>
-
 	<?if(in_array(27, $arGroups) || in_array(1, $arGroups)){?>
 		<img src="/knowledge_base/pools/images/plus.png" class="add" style="position: relative; top: -50px;">
 	<?}?>
       <!-- Меню -->
-		<?/*
-		data-fancybox data-type="ajax" data-src="='/knowledge_base/pages_instructions/page'.$key.'.php'"
-		*/?>
       <ul class="left_menu_tems">
       	<?foreach($arMenu as $key => $menyItem){?>
         	<li class="menu_item2" data-src=<?=$key?>>
@@ -40,33 +34,15 @@
 					<img src="/knowledge_base/pools/images/EDIT.png" class="edit">
         		<?}?>
 				<a class="fancybox" data-fancybox-type="iframe" href="javascript:;" data-src="<?='/knowledge_base/pages_instructions/page'.$key.'.pdf'?>"><?=$menyItem?></a>
-
-
         	</li>
 		<?}?>
 		<?/**/?>
-
-
-        <!-- <li><a href="#">Результат звонка «Претензия (Кража)»</a></li>
-        <li><a href="#">Результат звонка «Недоступен»</a></li>
-        <li><a href="#">Результат звонка «Неэффективный»</a></li>
-        		<li><a href="#">Результат звонка «Отказался разговаривать»</a></li>
-        		<li><a href="#">Исключение из опросов</a></li>
-        		<li><a href="#">Шаблоны для заполнения комментариев</a></li>
-        		<li><a href="#">Отчеты</a></li>
-        		<li><a href="#">Contact</a></li>
-        		<li><a href="#">Contact</a></li> -->
       </ul>
-      <!--<div class="edit">edit</div>-->
-      <!--<div class="add">add</div>-->
     </div>
 
 	  <!-- БОКОВОЕ МЕНЮ -->
-
 <div class="wrapper">
-
  <?
-/* $APPLICATION->ShowHead(); */
 CModule::IncludeModule('iblock');
 
 $res=CIBlockElement::GetList(
@@ -94,22 +70,6 @@ while ($arres=$res->fetch()){
 }
  ?>
 
-<? /* $APPLICATION->IncludeComponent("bitrix:fileman.light_editor","",Array(
-    "CONTENT" => "",
-    "INPUT_NAME" => "",
-    "INPUT_ID" => "",
-    "WIDTH" => "100%",
-    "HEIGHT" => "300px",
-    "RESIZABLE" => "Y",
-    "AUTO_RESIZE" => "Y",
-    "VIDEO_ALLOW_VIDEO" => "N",
-    "USE_FILE_DIALOGS" => "N",
-    "ID" => "",
-    "JS_OBJ_NAME" => ""
-    )
-); */
- ?>
-
 <header>
 <div class="icon-menu">
         <img src="images/menu-ham-icon.png">
@@ -120,14 +80,10 @@ while ($arres=$res->fetch()){
  <td> <img src="/knowledge_base/img/right.png"> </td>
  <td width="405px"><a href="javascript:window.location.reload()"><img src="/knowledge_base/img/avilon.png" width="400" height="70"></a><!-- &nbsp  --></td>
  <td align="right"> <img src="/knowledge_base/img/left.png" align="right"> </td>
- 
- 
  </tr>
  </table>
 </header>
 <div class="one"><h1><b>ОПРОСЫ</b></h1></div>
-
-
 
 <div class="modal" data-modal="1">
   <div class="modal__cross js-modal-close"> X</div>
@@ -1081,7 +1037,6 @@ while ($arres=$res->fetch()){
   </div>
 </div>
 
-
 <a data-hystmodal="#modalLong12" href="#modalLong12">
       <div class="thumbs" data-CODE='KUZ_VW_HD_JC_FD_VOLVO_PG_CTR_MITSUBISHI_FIAT' data-ID='12757101'>
       <img src="/upload/iblock/66e/logo-Volkswagen-2012 (В).png" style=""><!--"width: 61px; height: 100px;"-->
@@ -1327,7 +1282,6 @@ while ($arres=$res->fetch()){
   </div>
 </div>
 
-
 <a data-hystmodal="#modalLong18" href="#modalLong18">
       <div class="thumbs" data-CODE='KUZ_VW_HD_JC_FD_VOLVO_PG_CTR_MITSUBISHI_FIAT' data-ID='15942204'>
       <img src="/upload/iblock/14b/mits.png" style="width: 85px; height: 95px;"><!--"width: 61px; height: 100px;"-->
@@ -1366,8 +1320,6 @@ while ($arres=$res->fetch()){
   </div>
 </div>
 
-
-
 <a data-hystmodal="#modalLong19" href="#modalLong19">
       <div class="thumbs" data-CODE='KUZ_VW_HD_JC_FD_VOLVO_PG_CTR_MITSUBISHI_FIAT' data-ID='16872265'>
       <img src="/upload/iblock/153/logo-Volkswagen-2012 (1).png" style=""><!--"width: 61px; height: 100px;"-->
@@ -1405,8 +1357,6 @@ while ($arres=$res->fetch()){
     </div>
   </div>
 </div>
-
-
 
 <a data-hystmodal="#modalLong20" href="#modalLong20">
       <div class="thumbs" data-CODE='KUZ_VW_HD_JC_FD_VOLVO_PG_CTR_MITSUBISHI_FIAT_KIA' data-ID='16837845'>
@@ -1447,8 +1397,6 @@ while ($arres=$res->fetch()){
   </div>
 </div>
 
-
-
 <a data-hystmodal="#modalLong21" href="#modalLong21">
       <div class="thumbs" data-CODE='MASERATI' data-ID='12757098'>
       <img src="/upload/iblock/4ee/maserati.png" style="width: 65px; height: 100px;"><!--"width: 61px; height: 100px;"-->
@@ -1480,8 +1428,6 @@ while ($arres=$res->fetch()){
     </div>
   </div>
 </div>
-
-
 
 <a data-hystmodal="#modalLong22" href="#modalLong22">
       <div class="thumbs" data-CODE='SALE_AM' data-ID='12757095'>
@@ -1515,7 +1461,6 @@ while ($arres=$res->fetch()){
   </div>
 </div>
 
-
 <a data-hystmodal="#modalLong23" href="#modalLong23">
       <div class="thumbs" data-CODE='SALE_RR' data-ID='12757092'>
       <img src="/upload/iblock/ab7/Rolls-Royce.png" style="width: 61px; height: 100px;"><!--"width: 61px; height: 100px;"-->
@@ -1548,7 +1493,6 @@ while ($arres=$res->fetch()){
   </div>
 </div>
 
-
 <a data-hystmodal="#modalLong24" href="#modalLong24">
       <div class="thumbs" data-CODE='TRADE' data-ID='12757105'>
       <img src="/upload/iblock/ca3/trade_volg.png" style="width: 145px; height: 80px;"><!--"width: 61px; height: 100px;"-->
@@ -1580,21 +1524,8 @@ while ($arres=$res->fetch()){
     </div>
   </div>
 </div>
-
 </div>
 </div>
-<!-- пробник -->
-
-
-
-
-
-
-
-
-
-
-
 
 <div class="hystmodal" id="modalLongnews" aria-hidden="true">
         <div class="hystmodal__wrap">
@@ -1657,11 +1588,10 @@ while ($arres=$res->fetch()){
         "AJAX_OPTION_ADDITIONAL" => ""
     )
 );?>
-      <?if(in_array(27, $arGroups)  || in_array(1, $arGroups)){?>
+  <?if(in_array(27, $arGroups)  || in_array(1, $arGroups)){?>
     <div class="showAddNews">Добавить новость</div>
   <?}?>
   
-
   <div class="add_news" align="center" id="popup">
     <h1> Добавить новость </h1>
     <form>
@@ -1697,31 +1627,17 @@ while ($arres=$res->fetch()){
 </div>
   <!-- END Разметка на главной -->
 
-
-
   <div class="footer" align="left">
   <script src="/knowledge_base/scripts/jquery-1.8.3.js"></script>
   <script type="text/javascript" src="/knowledge_base/jquery.fancybox.min.js"></script>
   <script type="text/javascript" src="/knowledge_base/pools/menu.js"></script>
   <script type="text/javascript" src="/knowledge_base/scripts/left_menu.js"></script>
-  <!-- Меню -->
-<!-- Меню -->
-<!-- //include($_SERVER["DOCUMENT_ROOT"]."/knowledge_base/menu.php");?> -->
-
-
 <ul id="menu">
 	<li><a href="/knowledge_base/">Главная</a></li>
 	<li><a href="/knowledge_base/pools/">Опросы</a></li>
 	<li><a data-hystmodal="#modalLongnews" href="#modalLongnews">Новости</a></li>
-	</ul>
+</ul>
 	<!-- END Меню -->
-
-
-
-
-
-
-
 <br> <br> <br> <br>
 <div align="center">
 	<font face="MS Sans Serif" size="2" color="white">
@@ -1736,8 +1652,6 @@ while ($arres=$res->fetch()){
 				function saveClick(){
 	$(".saveResult").on("click", function(){
 		$editedBlock = $(this).parent(".block_content");
-		//var blockText = $editedBlock.html();
-
 		var frameContent = $(this).parent(".block_content").find("iframe").contents().find("body").html();
 		var blockCode = $(this).parent(".block_content").data("block");
 		var blockID = $(this).parent(".block_content").data("id");
@@ -1754,26 +1668,18 @@ while ($arres=$res->fetch()){
 			success: function(html){
 				$editedBlock.html(html);
 				$editedBlock.parent(".col").find(".edit_col").show();
-				//result=$.parseJSON(html);
-
-				/* $('.layout').html (html);
-				console.log(html); */
 			}
 		})
 
 		console.log(frameContent);
 		console.log(blockCode);
-
-		//CODE: blockCode,
 	})
 }
 
 function editCol(){
 	$(".edit_col").on("click", function(){
-
 		var $editedBlock = $(this).parent(".col").find(".block_content");
 		var blockText = $editedBlock.html();
-
 		$.ajax({
 			url: '/knowledge_base/pools/ajax_edit_blocks.php',
 			type: 'POST',
@@ -1826,8 +1732,6 @@ $(document).ready(function(){
 				$submenu.css("top", "-"+ submenuitems * 45+"px");
 			}
 		})
-
-				//console.log(Name);
 	$(".showAddNews").on("click", function(){
 		$(".add_news").fadeToggle();
 	})
@@ -1836,7 +1740,6 @@ $(document).ready(function(){
 		var frameContent = $(this).parent(".add_news").find("iframe").contents().find("body").html();
 		var Name = $(this).parent(".add_news").find("input[name='news_name']").val();
 		var iBlock = $(this).parent(".add_news").find("input[name='IBLOCK']").val();
-
 
 		$.ajax({
 			url: '/knowledge_base/addNews.php',
@@ -1852,30 +1755,21 @@ $(document).ready(function(){
 				alert(data.TEXT);
 			}
 		})
-
 		})
 		})
-
-
-
 </script>
-
-	</font>
+</font>
 </div>
-
-  </div>
-
-  </div>
- </body>
+</div>
+</div>
+</body>
 </html>
 
 <?
-
 global $USER;
 $arGroups = $USER->GetUserGroupArray();
 $login = CUser::GetLogin();
 $test = 1;
-
 	if (in_array("27", $arGroups)) {
 	    echo "<b>$login</b> - редактирование анкет <span style='color: green;'>разрешено</span>";
 	}
@@ -1883,11 +1777,7 @@ $test = 1;
 	{
 		echo "<b>$login</b> - редактирование анкет <span style='color: red;'>запрещено</span>";
 	}
-
-
-
 ?>
-
 
 <script src="../dist/hystmodal.min.js"></script>
     <script>
@@ -1917,20 +1807,16 @@ $test = 1;
         // myModal.init();
     </script>
 
-
     <!-- Скрипт для добавления pdf-файла в модальном окне -->
 <script>
 !function(e){"function"!=typeof e.matches&&(e.matches=e.msMatchesSelector||e.mozMatchesSelector||e.webkitMatchesSelector||function(e){for(var t=this,o=(t.document||t.ownerDocument).querySelectorAll(e),n=0;o[n]&&o[n]!==t;)++n;return Boolean(o[n])}),"function"!=typeof e.closest&&(e.closest=function(e){for(var t=this;t&&1===t.nodeType;){if(t.matches(e))return t;t=t.parentNode}return null})}(window.Element.prototype);
 
-
 document.addEventListener('DOMContentLoaded', function() {
-
    /* Записываем в переменные массив элементов-кнопок и подложку.
       Подложке зададим id, чтобы не влиять на другие элементы с классом overlay*/
    var modalButtons = document.querySelectorAll('.js-open-modal'),
        overlay      = document.querySelector('.js-overlay-modal'),
        closeButtons = document.querySelectorAll('.js-modal-close');
-
 
    /* Перебираем массив кнопок */
    modalButtons.forEach(function(item){

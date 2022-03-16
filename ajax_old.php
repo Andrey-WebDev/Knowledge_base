@@ -25,9 +25,6 @@
 	);
 	
 	while ($arres=$res->fetch()){
-		/* echo '<pre>';
-		print_r ($arres);
-		echo '</pre>'; */
 		$arresult['EDITOR']= $arres["MODIFIED_BY"];
 		$arresult['MEH_TSEH']= array("TEXT" => $arres ['PROPERTY_MEH_TSEH_VALUE']['TEXT'], "ID" => $arres['ID']);
 		$arresult['KUZ_TSEH']= array("TEXT" => $arres ['PROPERTY_KUZ_TSEH_VALUE']['TEXT'], "ID" => $arres['ID']);
@@ -71,22 +68,11 @@
 		
 	}
  }
- 
- //var_dump($cellHaveText);
- 
+
 $cell_width = floor(95/$cellHaveText);
- 
 $arEditor = CUser::GetByID($arresult["EDITOR"])->fetch();
 $editorName = $arEditor["NAME"]." ".$arEditor["SECOND_NAME"]." ".$arEditor["LAST_NAME"];
- /* echo '<pre>';
- print_r ($arEditor);
- echo '</pre>'; */
 
- 
-/* echo "<pre>";
-print_r($arresult);
-echo "</pre>"; */
- 
  foreach ($arresult as $key=>$arValues){
 	if (is_array($arValues) && strlen($arValues["TEXT"])){
 		$html .='<div class="col" style="width: '.$cell_width.'%"><div class="block_content" data-block="'.$key.'" data-id="'.$arValues["ID"].'">'.$arValues["TEXT"].'</div><div class="editor">Изменил: '.$editorName.'#DATE_UPDATE#</div><img src="img/edit.png" class="edit_col"></div>';
@@ -95,9 +81,6 @@ echo "</pre>"; */
 
 $html = str_replace("#DATE_UPDATE#", " в ".$arresult["TIMESTAMP_X"], $html);
  
- 
  echo $html;
- //echo json_encode($arresult);
  exit;
-
  ?>

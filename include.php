@@ -1,10 +1,5 @@
 <?
-
 require_once('OLD.php');
-
-
-
-
 if ($update == 'Y') {
 	function warning()
 		{

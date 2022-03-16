@@ -1,31 +1,14 @@
  <?
  include($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
-
-/*ini_set('error_reporting', E_ALL);
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);*/
-
-
-
 /*ПАНЕЛЬ УПРАВЛЕНИЯ*/
 
 $update = 'N'; //Уведомление об обновлении БЗ
-
 global $USER;
-if ($USER->IsAdmin()) echo "
-
-
-
-
-";
-
-
- 
+if ($USER->IsAdmin()) echo "";
 
 /*ПАНЕЛЬ УПРАВЛЕНИЯ*/
 include 'include.php';
-
- ?>
+?>
 <!DOCTYPE html>
  <html>
  <head>
@@ -36,9 +19,7 @@ include 'include.php';
  	<?CJSCore::Init();?>
  	<script src="/knowledge_base/scripts/jquery-1.8.3.js"></script>
  	<link rel="stylesheet" href="jquery.fancybox.min.css">
-
  	<script type="text/javascript" src="/knowledge_base/jquery.fancybox.min.js"></script>
-
  </head>
  <body>
  	<?
@@ -70,19 +51,14 @@ include 'include.php';
  			'PROPERTY_SALES_DEPORT',
  			"TIMESTAMP_X",
  		)
- 		//array ('NAME','ID','CODE','PREVIEW_PICTURE', "PROPERTY_SALES_DEPORT", "PROPERTY_KUZ_TSEH", "PROPERTY_MEH_TSEH")
  	);
 
  	while ($ob = $res->GetNextElement()){
 	 	$arFields = $ob->GetFields();
-		/*echo "<pre>";
-		print_r($arFields);
-		echo "</pre>";*/
 		$arresult[$arFields['ID']]['NAME'] = $arFields['NAME'];
 		$arresult[$arFields['ID']]['CODE'] = $arFields['CODE'];
 		$arresult[$arFields['ID']]['PICTURE'] = CFile::GetFileArray($arFields['PREVIEW_PICTURE']);
 	 	$arProps = $ob->GetProperties();
-	 	// var_dump($arFields['ID']);
 		$arresult[$arFields['ID']]["PROPS"]["MEH_TSEH"] = $arProps["MEH_TSEH"]["DESCRIPTION"];
 		$arresult[$arFields['ID']]["PROPS"]["KUZ_TSEH"] = $arProps["KUZ_TSEH"]["DESCRIPTION"];
 		$arresult[$arFields['ID']]["PROPS"]["SALES_DEPORT"] = $arProps["SALES_DEPORT"]["DESCRIPTION"];
@@ -110,13 +86,6 @@ include 'include.php';
 
  		while ($arres = $res->GetNextElement()){
  			$arPropsDOP = $arres->GetProperties();
-
- 			/*echo "<pre>";
- 			print_r($arPropsDOP['KUZ_TSEH']);
- 			echo "</pre>";*/
-
- 			// var_dump($arCODE[0]);
-
  			if ($arCODE[0] == 'SALE'){
  				$arresult[$key]["PROPS"]["SALES_DEPORT"] = $arPropsDOP['SALES_DEPORT']["DESCRIPTION"];
  			}
@@ -136,58 +105,32 @@ include 'include.php';
  			$prop = array(
  				"TIMESTAMP" => $arProp[0],
 				"DATE" => date("c", $arProp[0]),
-				//"USER" => $arProps[1]
 			);
  		}
  	}
-
-
- 	?>
-
-<? /* $APPLICATION->IncludeComponent("bitrix:fileman.light_editor","",Array(
-    "CONTENT" => "",
-    "INPUT_NAME" => "",
-    "INPUT_ID" => "",
-    "WIDTH" => "100%",
-    "HEIGHT" => "300px",
-    "RESIZABLE" => "Y",
-    "AUTO_RESIZE" => "Y",
-    "VIDEO_ALLOW_VIDEO" => "N",
-    "USE_FILE_DIALOGS" => "N",
-    "ID" => "",
-    "JS_OBJ_NAME" => ""
-    )
-    ); */
-    ?>
+ ?>
     <header>
     	<div class="header" align="left">
     		<img src="img/logo.png">
     		<div class="chat">
     			<h1 class="white">База Знаний ЦОВ и ОК</h1>
     			<br>
-    			<div align="center"> <a href="javascript:window.location.reload()"><img src="img/avilon.png" width="200" height="35"> </a> </div>
-							
-																	<?warning()?>
+    			<div align="center"> <a href="javascript:window.location.reload()"><img src="img/avilon.png" width="200" height="35"> </a> </div><?warning()?>
     		</div>
     	</div>
-
-
     </header>
-
     <div class="menu" align="center">
-
     	<div class="menu_wrapper">
-    			<div class="menu_item">
-    					<a data-fancybox="modal" data-src="http://ipsoftrec.avilon-nymm.ru/tv/index.php"href="#">
+    		<div class="menu_item">
+    			<a data-fancybox="modal" data-src="http://ipsoftrec.avilon-nymm.ru/tv/index.php"href="#">
     				<div class="thumbs goHome">
-    						<img src="img/im.png">
-    						<div class="caption">
-    							<span class="title">Статистика</span>
-    						</div>
+    					<img src="img/im.png">
+    					<div class="caption">
+    						<span class="title">Статистика</span>
+    					</div>
     				</div>
-    					</a>
-
-    			</div>
+    			</a>
+    		</div>
     			<?
     			$delimer=intval(count($arresult)/4);
     			$i=1;
@@ -210,23 +153,9 @@ include 'include.php';
     				echo '</div><div class="menu_wrapper">';
     			}
     			$i++;
-    		}
-    		?>
-
+    		}?>
     	</div>
-
-
-
 </div>
-
-<!-- Разметка на главной -->
-
-<!--<div class="break">
-    <a data-fancybox="modal" data-src="#break" href="#">
-        <img src='/knowledge_base/img/break.png' class="break_img">
-	</a>
-</div> -->
-
 
 <div class="layout">
 	<?$APPLICATION->IncludeComponent("bitrix:news.list","knowledge_base",Array(
@@ -290,7 +219,6 @@ include 'include.php';
 		<div class="showAddNews">Добавить новость</div>
 	<?}?>
 
-
 	<div class="add_news" align="center" id="popup">
 			<h1> Добавить новость </h1>
 		<form>
@@ -321,7 +249,6 @@ include 'include.php';
 
 </div>
 
-
 <!-- END Разметка на главной -->
 
 <div class="footer" align="left">
@@ -343,26 +270,7 @@ document.write('Базе знаний <B>' + Math.round(dt) + '</B> -й день
 document.write('</SMALL>');
 </script>
 </font>
-
-<!-- SWITCH -->
-<!-- <div class="container">
-		<div class="switch white">
-			<input type="radio" name="switch" id="switch-off" onclick="document.location='../knowledge_base/index.php?url=new';" checked>
-				<input type="radio" name="switch" id="switch-on" onclick="document.location='../knowledge_base/NEW.php';">
-					<div class="name">
-						Новогодний режим
-					</div>
-				<label for="switch-off">Выкл</label>
-			<label for="switch-on">Вкл</label>
-
-			<span class="toggle"></span>
-		</div>
-</div>-->
-<!-- SWITCH -->
-
 </div>
-
 </div>
-
 </body>
 </html>

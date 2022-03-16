@@ -1,31 +1,16 @@
 ﻿ <?
  include($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
 
-/*ini_set('error_reporting', E_ALL);
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);*/
-
-
-
 /*ПАНЕЛЬ УПРАВЛЕНИЯ*/
 
 $update = 'N'; //Уведомление об обновлении БЗ
 
 global $USER;
-if ($USER->IsAdmin()) echo "
-
-
-
-
-";
-
-
- 
+if ($USER->IsAdmin()) echo "";
 
 /*ПАНЕЛЬ УПРАВЛЕНИЯ*/
 include 'include.php';
-
- ?>
+?>
 <!DOCTYPE html>
  <html>
  <head>
@@ -37,10 +22,8 @@ include 'include.php';
  	<script src="/knowledge_base/scripts/jquery-1.8.3.js"></script>
  	<link rel="stylesheet" href="jquery.fancybox.min.css">
  	<link rel="stylesheet" href="/knowledge_base/src/hystmodal.css">
-  <link rel="stylesheet" href="/knowledge_base/css/demos.css">
-
- 	<script type="text/javascript" src="/knowledge_base/jquery.fancybox.min.js"></script>
-
+    <link rel="stylesheet" href="/knowledge_base/css/demos.css">
+	<script type="text/javascript" src="/knowledge_base/jquery.fancybox.min.js"></script>
  </head>
  <body>
  	<?
@@ -72,19 +55,14 @@ include 'include.php';
  			'PROPERTY_SALES_DEPORT',
  			"TIMESTAMP_X",
  		)
- 		//array ('NAME','ID','CODE','PREVIEW_PICTURE', "PROPERTY_SALES_DEPORT", "PROPERTY_KUZ_TSEH", "PROPERTY_MEH_TSEH")
  	);
 
  	while ($ob = $res->GetNextElement()){
 	 	$arFields = $ob->GetFields();
-		/*echo "<pre>";
-		print_r($arFields);
-		echo "</pre>";*/
 		$arresult[$arFields['ID']]['NAME'] = $arFields['NAME'];
 		$arresult[$arFields['ID']]['CODE'] = $arFields['CODE'];
 		$arresult[$arFields['ID']]['PICTURE'] = CFile::GetFileArray($arFields['PREVIEW_PICTURE']);
 	 	$arProps = $ob->GetProperties();
-	 	// var_dump($arFields['ID']);
 		$arresult[$arFields['ID']]["PROPS"]["MEH_TSEH"] = $arProps["MEH_TSEH"]["DESCRIPTION"];
 		$arresult[$arFields['ID']]["PROPS"]["KUZ_TSEH"] = $arProps["KUZ_TSEH"]["DESCRIPTION"];
 		$arresult[$arFields['ID']]["PROPS"]["SALES_DEPORT"] = $arProps["SALES_DEPORT"]["DESCRIPTION"];
@@ -112,13 +90,6 @@ include 'include.php';
 
  		while ($arres = $res->GetNextElement()){
  			$arPropsDOP = $arres->GetProperties();
-
- 			/*echo "<pre>";
- 			print_r($arPropsDOP['KUZ_TSEH']);
- 			echo "</pre>";*/
-
- 			// var_dump($arCODE[0]);
-
  			if ($arCODE[0] == 'SALE'){
  				$arresult[$key]["PROPS"]["SALES_DEPORT"] = $arPropsDOP['SALES_DEPORT']["DESCRIPTION"];
  			}
@@ -138,91 +109,39 @@ include 'include.php';
  			$prop = array(
  				"TIMESTAMP" => $arProp[0],
 				"DATE" => date("c", $arProp[0]),
-				//"USER" => $arProps[1]
 			);
  		}
  	}
-
-
- 	?>
-
-<? /* $APPLICATION->IncludeComponent("bitrix:fileman.light_editor","",Array(
-    "CONTENT" => "",
-    "INPUT_NAME" => "",
-    "INPUT_ID" => "",
-    "WIDTH" => "100%",
-    "HEIGHT" => "300px",
-    "RESIZABLE" => "Y",
-    "AUTO_RESIZE" => "Y",
-    "VIDEO_ALLOW_VIDEO" => "N",
-    "USE_FILE_DIALOGS" => "N",
-    "ID" => "",
-    "JS_OBJ_NAME" => ""
-    )
-    ); */
-    ?>
-    <header>
-    	<!-- <div class="header" align="left">
-    		<img style="max-width: 100%; height: 200px;" src="img/logo2.png">
-    		<div class="chat">
-    			<h1 class="white">База Знаний ЦОВ и ОК</h1>
-    			<br>
-    			<div align="center"> <a href="javascript:window.location.reload()"><img src="img/avilon.png" width="400" height="70"> </a> </div>
-							
-																	<?warning()?>
-    		</div>
-    	</div> -->
-<!-- <table width=100% cellspacing="0" cellpadding="0" border="0">
-<tr>
-<td ><img src="img/right.png" height="200px" align=center></td>
-<td background="img/between.png">&nbsp </td>
-<td><img src="img/left.png" height="200px" align=center></td>
-</tr>
-</table>
-
-<table style="background: url(images/tt2.png)"
-width= 100%
-height=200px
-border="1"
-bgcolor="#e6e6fa"
-cellpadding="10">	
-<tr><td
-rowspan="2"
-style="width:80%">
-</td></tr> -->
+ ?>
+<header>
 <table class="table_head">
  <tr>
  <td> <img src="img/right.png"> </td>
- <td width="405px"><a href="javascript:window.location.reload()"><img src="img/avilon.png" width="400" height="70" align="center"></a><!-- &nbsp --> </td>
+ <td width="405px"><a href="javascript:window.location.reload()"><img src="img/avilon.png" width="400" height="70" align="center"></a></td>
  <td align="right"> <img src="img/left.png" align="right"> </td>
- 
- 
  </tr>
  </table>
+</header>
 
-
-
-    </header>
 <div class="one"><h1><b> БАЗА ЗНАНИЙ ЦОВ И ОК</b></h1></div>
     <div class="menu" align="center">
     	<div class="menu_wrapper">
     			<div class="menu_item">
-    					<a data-fancybox="modal" data-src="http://ipsoftrec.avilon-nymm.ru/tv/index.php"href="#">
+    				<a data-fancybox="modal" data-src="http://ipsoftrec.avilon-nymm.ru/tv/index.php"href="#">
     				   <div class="thumbs goHome">
-    						   <img src="img/im.png">
-    						      <div class="caption">
-    							        <span class="title">Статистика</span>
-    						      </div>
+    						<img src="img/im.png">
+    						    <div class="caption">
+    							    <span class="title">Статистика</span>
+    						    </div>
     				    </div>
-    					</a>
+    				</a>
     			</div>
-
 <div class="hystmodal" id="modalLong" aria-hidden="true">
         <div class="hystmodal__wrap">
             <div class="hystmodal__window" role="dialog" aria-modal="true">
                 <button class="hystmodal__close" data-hystclose>Закрыть</button>
                 <div class="hystmodal__styled">      
-      <ul>
+            <ul>
 			<div class="layout">
 	         <div class="thumbs" data-CODE='<?=$aritim['CODE']?>' data-ID='<?=$key?>'>
     					<img src="<?=$aritim['PICTURE']['SRC'] ?>" style="<?=$aritim['PICTURE']['DESCRIPTION']?>"><!--"width: 61px; height: 100px;"-->
@@ -237,13 +156,11 @@ style="width:80%">
 						  </div>
     				</div>
     			</div>	
-		  </ul>
+		    </ul>
       </div>
     </div>
   </div>
 </div>
-
-
     			<?
     			$delimer=intval(count($arresult)/1);
     			$i=1;
@@ -271,8 +188,6 @@ style="width:80%">
     		?>
     	</div>
 </div>
-
-
 
 <!-- HTML модального окна -->
 <div class="hystmodal" id="modalLongnew" aria-hidden="true">
@@ -336,12 +251,11 @@ style="width:80%">
 		"AJAX_OPTION_ADDITIONAL" => ""
 	)
 	);?>
-			<?$arGroups = $USER::GetUserGroup($USER->GetID());?>
+	<?$arGroups = $USER::GetUserGroup($USER->GetID());?>
 	<?if(in_array(27, $arGroups)  || in_array(1, $arGroups)){?>
 		<div class="showAddNews">Добавить новость</div>
 	<?}?>
   
-
 	<div class="add_news" align="center" id="popup">
 			<h1> Добавить новость </h1>
 		<form>
@@ -375,8 +289,6 @@ style="width:80%">
     </div>
   </div>
 </div>
-
-
 
 <!-- END Разметка на главной -->
 
@@ -484,70 +396,14 @@ style="width:80%">
 <embed src="/knowledge_base/content/autologistics.pdf" width="900" height="850" />
 </div>
 
-
 <!-- PDF файлы END-->
-
-
-
-
 
 <ul id="menu">
 	<li><a href="/knowledge_base/">Главная</a></li>
-
-	<!-- <li><a data-fancybox="modal" data-src="#autologistic" href="#">Автологистика</a></li>
-	<li><a href="#">АкитА</a>
-		<ul>
-		<li><a data-fancybox="modal" data-src="#tender" href="#">Тендерный отдел</a></li>
-		<li><a data-fancybox="modal" data-src="#OPRP" href="#">Соедин. с ОПРП</a></li>
-		</ul>
-	</li>
-	<li><a data-fancybox="modal" data-src="#agrogrib" href="#">Агрогриб</a></li>
-	<li><a href="#">Рассылки</a>
-		<ul>
-		<li><a data-fancybox="modal" data-src="#Push" href="#">Push-сообщения</a></li>
-		<li><a data-fancybox="modal" data-src="#status" href="#">Статус источника</a></li>
-		<li><a data-fancybox="modal" data-src="#otkaz" href="#">Скрипт при отказе</a></li>
-		<li><a data-fancybox="modal" data-src="#izm_name" href="#">Изменение имени</a></li>
-		</ul>
-	</li>
-	
-	<li><a data-fancybox="modal" data-src="#solt" href="#">Солт</a></li>
-	<li><a href="#">Директорат</a>
-		<ul>
-		<li><a data-fancybox="modal" data-src="#directorat" href="#">Директорат</a></li>
-		<li><a data-fancybox="modal" data-src="#algoritm_director" href="#">Алгоритм</a></li>
-		<li><a data-fancybox="modal" data-src="#info_director" href="#">Инструкция</a></li>
-		</ul>
-	</li>
-		
-	<li><a href="#">Диспозиция и др.</a>
-		<ul>
-		<li><a data-fancybox="modal" data-src="#disposition" href="#">Диспозиция</a></li>
-		<li><a data-fancybox="modal" data-src="#strachovka" href="#">Страхование</a></li>
-		<li><a data-fancybox="modal" data-src="#kredit" href="#">Кредитование</a></li>
-		<li><a data-fancybox="modal" data-src="#presentation" href="#">Гарантия</a></li>
-		<li><a data-fancybox="modal" data-src="#cisco" href="#">Ошибки Cisco</a></li>
-		</ul>
-	</li>
-	
-	<li><a data-fancybox="modal" data-src="#BH" href="#">Бухгалтерия</a></li>
-	<li><a data-fancybox="modal" data-src="#flit" href="#">Флит отделы</a></li>
-	<li><a href="#">Общие схемы</a>
-		<ul>
-		<li><a data-fancybox="modal" data-src="#lising" href="#">Лизинг</a></li>
-		<li><a data-fancybox="modal" data-src="#model_cars" href="#">Модельный ряд</a></li>
-		<li><a data-fancybox="modal" data-src="#any_numbers" href="#">Общ.номера</a></li>
-		<li><a data-fancybox="modal" data-src="#priemka" href="#">Приемка</a></li>
-		<li><a data-fancybox="modal" data-src="#status_call" href="#">Статусы</a></li>
-		<li><a data-fancybox="modal" data-src="#service" href="#">Сервис</a></li>
-		</ul>
-	</li> -->
-	
 	<li><a href="/knowledge_base/pools/">Опросы</a></li>
 	<li><a data-hystmodal="#modalLongnew" href="#modalLongnew">Новости</a></li>
 	</ul>
 	<!-- END Меню -->
-
 	<br><br><br><br>
 	<div align="center">
 		<font face="MS Sans Serif" size="2" color="white">
@@ -561,27 +417,8 @@ document.write('Базе знаний <B>' + Math.round(dt) + '</B> -й день
 document.write('</SMALL>');
 </script>
 </font>
-
-<!-- SWITCH -->
-<!-- <div class="container">
-		<div class="switch white">
-			<input type="radio" name="switch" id="switch-off" onclick="document.location='../knowledge_base/index.php?url=new';" checked>
-				<input type="radio" name="switch" id="switch-on" onclick="document.location='../knowledge_base/NEW.php';">
-					<div class="name">
-						Новогодний режим
-					</div>
-				<label for="switch-off">Выкл</label>
-			<label for="switch-on">Вкл</label>
-
-			<span class="toggle"></span>
-		</div>
-</div>-->
-<!-- SWITCH -->
-
 </div>
-
 </div>
-
 </body>
 </html>
 
@@ -608,7 +445,4 @@ document.write('</SMALL>');
                 }
             },
         });
-        // for dynamic init() of modals
-        // myModal.config.linkAttributeName = 'data-hystmodal';
-        // myModal.init();
     </script>

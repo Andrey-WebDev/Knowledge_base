@@ -1,7 +1,7 @@
 ﻿ <?
  include($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.php");
-
  ?>
+
  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
  <html xmlns="http://www.w3.org/1999/xhtml">
@@ -12,9 +12,7 @@
  	<?CJSCore::Init();?>
  	<script src="/knowledge_base/scripts/jquery-1.8.3.js"></script>
  	<link rel="stylesheet" href="jquery.fancybox.min.css">
-
  	<script type="text/javascript" src="/knowledge_base/jquery.fancybox.min.js"></script>
-
  </head>
  <body>
 	<?
@@ -44,22 +42,6 @@
  		$arresult [$arres['ID']]['PICTURE']=CFile::GetFileArray($arres['PREVIEW_PICTURE']);
  	}
  	?>
-
-<? /* $APPLICATION->IncludeComponent("bitrix:fileman.light_editor","",Array(
-    "CONTENT" => "",
-    "INPUT_NAME" => "",
-    "INPUT_ID" => "",
-    "WIDTH" => "100%",
-    "HEIGHT" => "300px",
-    "RESIZABLE" => "Y",
-    "AUTO_RESIZE" => "Y",
-    "VIDEO_ALLOW_VIDEO" => "N",
-    "USE_FILE_DIALOGS" => "N",
-    "ID" => "",
-    "JS_OBJ_NAME" => ""
-    )
-    ); */
-    ?>
     <header>
     	<div class="header" align="left">
     		<img src="img/logo.png">
@@ -69,25 +51,20 @@
     			<div align="center"> <img src="img/avilon.png" width="200" height="35"> </div>
     		</div>
     	</div>
-
-
     </header>
 
     <div class="menu" align="center">
-
-    	
-    		<div class="menu_wrapper">
-    			<div class="menu_item">
-    					<a data-fancybox="modal" data-src="http://ipsoftrec.avilon-nymm.ru/tv/index.php"href="#">
+    	<div class="menu_wrapper">
+    		<div class="menu_item">
+    			<a data-fancybox="modal" data-src="http://ipsoftrec.avilon-nymm.ru/tv/index.php"href="#">
     				<div class="thumbs goHome">
-    						<img src="img/im.png">
-    						<div class="caption">
-    							<span class="title">Статистика</span>
-    						</div>
+    					<img src="img/im.png">
+    					<div class="caption">
+    						<span class="title">Статистика</span>
+    					</div>
     				</div>
-    					</a>
-
-    			</div>
+    			</a>
+    		</div>
     			<?
     			$delimer=intval(count($arresult)/2);
     			$i=1;
@@ -104,25 +81,9 @@
     				echo '</div><div class="menu_wrapper">';
     			}
     			$i++;
-    		}
-    		?>
-
+    		}?>
     	</div>
-
-
-
-
-
 </div>
-
-<!-- Разметка на главной -->
-
-<!--<div class="break"> 
-    <a data-fancybox="modal" data-src="#break" href="#">
-        <img src='/knowledge_base/img/break.png' class="break_img"> 
-	</a>
-</div> -->
-
 
 <div class="layout">
 	<?$APPLICATION->IncludeComponent("bitrix:news.list","knowledge_base",Array(
@@ -186,7 +147,6 @@
 		<div class="showAddNews">Добавить новость</div>
 	<?}?>
 
-	
 	<div class="add_news" align="center" id="popup">
 			<h1> Добавить новость </h1>
 		<form>
@@ -217,14 +177,12 @@
 
 </div>
 
-
 <!-- END Разметка на главной -->
 <div class="footer" align="left">
 
 	<!-- Меню -->
 	<?include($_SERVER["DOCUMENT_ROOT"]."/knowledge_base/menu.php");?>
 	<!-- END Меню -->
-
 	<br><br><br><br>
 	<div align="center">
 		<font face="MS Sans Serif" size="2" color="white">
@@ -239,8 +197,6 @@ document.write('</SMALL>');
 </script>
 </font>
 </div>
-
 </div>
-
 </body>
 </html>
